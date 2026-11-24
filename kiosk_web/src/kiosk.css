@@ -1,0 +1,53 @@
+:root { --bg:#f3f6fa; --card:#fff; --text:#14202e; --muted:#6b7a8a; --blue:#0b4fa8; --green:#137a3a; --amber:#b26a00; --red:#b3261e; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.page { max-width: 880px; margin: 0 auto; padding: 16px; }
+header { display:flex; justify-content:space-between; align-items:center; background:var(--blue); color:#fff; padding:14px 18px; border-radius:12px; }
+.brand { font-size:20px; font-weight:700; }
+.meta .on { color:#7dffa6; } .meta .off { color:#ffb3ad; font-weight:700; }
+.flow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:14px 0; color:var(--muted); font-size:14px; }
+.flow span { padding:4px 10px; border-radius:20px; background:#e3e9f1; }
+.flow span.active { background:var(--blue); color:#fff; }
+.card { background:var(--card); border-radius:14px; padding:20px; box-shadow:0 4px 18px rgba(20,32,46,.08); margin-bottom:14px; }
+.center { text-align:center; }
+.center h1 { margin:6px 0 8px; }
+button { font-size:15px; padding:10px 16px; border-radius:10px; border:1px solid #c9d3df; background:#fff; cursor:pointer; margin:4px; }
+button.big { font-size:20px; padding:14px 40px; background:var(--blue); color:#fff; border:none; margin:14px 0; }
+button.ok { background:var(--green); color:#fff; border:none; }
+button.bad { background:var(--red); color:#fff; border:none; }
+button:disabled { opacity:.5; cursor:not-allowed; }
+.muted { color:var(--muted); font-size:13px; }
+.error { color:var(--red); }
+.card.error { border-left:5px solid var(--red); }
+.result { border-left:8px solid var(--muted); }
+.result.ALLOW { border-left-color:var(--green); } .result.DENY { border-left-color:var(--red); } .result.REQUEST_VERIFICATION { border-left-color:var(--amber); }
+.verdict { font-size:34px; font-weight:800; }
+.result.ALLOW .verdict { color:var(--green); } .result.DENY .verdict { color:var(--red); } .result.REQUEST_VERIFICATION .verdict { color:var(--amber); }
+.explain { font-size:17px; }
+.facts, .timing { display:flex; flex-wrap:wrap; gap:8px 18px; margin:8px 0; }
+.timing { font-size:13px; color:var(--muted); }
+.reasons { color:#334; font-size:14px; }
+.actions { margin-top:10px; }
+.offline input { display:block; width:100%; font-size:18px; padding:10px; margin:8px 0; border-radius:8px; border:1px solid #c9d3df; }
+.spinner { width:42px; height:42px; border:5px solid #dfe6ee; border-top-color:var(--blue); border-radius:50%; margin:10px auto; animation:spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.detector { padding:8px; }
+.testmode { margin-top: 18px; font-size: 13px; color: var(--muted); text-align: center; }
+.testmode select { font-size: 13px; padding: 4px; border-radius: 6px; }
+.testbadge { background: #fff4d6; border-radius: 8px; padding: 6px 10px; display: inline-block; }
+.card.threat { border-left: 6px solid #c62828; background: #fff1f0; color: #7a1712; }
+button.voice { font-size: 13px; padding: 3px 10px; margin: 0; background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.4); }
+.door { font-size: 14px; border-radius: 6px; padding: 2px 4px; }
+.field { display: block; width: 100%; font-size: 16px; padding: 9px; margin: 6px 0; border-radius: 8px; border: 1px solid #c9d3df; }
+.card.okmsg { border-left: 6px solid var(--green); background: #effaf2; }
+.metrics { margin: 8px auto; max-width: 820px; background: #eef4fb; border-radius: 8px; padding: 6px 10px; color: #23384d; }
+
+/* offline face check */
+.offcam { position: relative; display: none; margin: 12px auto; max-width: 480px; border-radius: 12px; overflow: hidden; background: #000; }
+.offcam.on { display: block; }
+.offcam video { width: 100%; display: block; transform: scaleX(-1); }
+.offcam .instruction { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px; background: rgba(0,0,0,.65); color: #fff; font-size: 1.3rem; font-weight: 700; text-align: center; }
+.offcam .count { opacity: .8; margin-left: 8px; }
+button.link { background: none; border: none; color: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+.stepup { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
+.simulate { display: block; margin-top: 6px; }
